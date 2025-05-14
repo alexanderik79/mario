@@ -1,56 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Star Survival</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <canvas id="gameCanvas"></canvas>
-
-    <!-- UI Overlay -->
+    <canvas id="minimap"></canvas>
     <div id="ui">
         <div id="score">Score: 0</div>
         <div id="level">Level: 1</div>
         <div id="fuel">Fuel: 0/100</div>
         <button id="musicToggle">Mute</button>
     </div>
-
-    <!-- Minimap -->
-    <canvas id="minimap" width="150" height="150"></canvas>
-
-    <!-- Welcome Modal -->
-    <div id="modalWelcome" class="modal">
-        <div class="modal-content">
-            <h1>Welcome to Star Survival!</h1>
-            <p>Use arrow keys to move your star. Eat smaller stars to grow, but avoid bigger ones!</p>
-            <button id="startGame">Start</button>
-        </div>
-    </div>
-
-    <!-- Game Over Modal -->
-    <div id="modalGameOver" class="modal hidden">
-        <div class="modal-content">
-            <h1>Game Over</h1>
-            <button onclick="restartGame()">Restart</button>
-        </div>
-    </div>
-
-    <!-- Win Modal -->
-    <div id="modalWin" class="modal hidden">
-        <div class="modal-content">
-            <h1>You Win!</h1>
-            <p>Congratulations, you're the biggest star!</p>
-            <button onclick="restartGame()">Play Again</button>
-        </div>
-    </div>
-
-    <!-- Background Music -->
-    <audio id="backgroundMusic" loop>
-        <source src="music.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-
-    <script src="game.js"></script>
+    <div id="modalWelcome"><button id="startGame">Start</button></div>
+    <div id="modalGameOver" class="hidden">Game Over</div>
+    <div id="modalWin" class="hidden">You Win!</div>
+    <audio id="backgroundMusic" loop src="assets/music.mp3"></audio>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
